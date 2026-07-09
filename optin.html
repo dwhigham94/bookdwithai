@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Updates — BookdAI</title>
+<meta name="description" content="Opt in to receive SMS appointment and follow-up messages from BookdAI, a service of Invictus Marketing Group LLC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0F1C24;--mist:#F4F7F8;--bubble:#1F9D66;--bubble-soft:#E4F4EC;--line:#D9E2E4;--slate:#54656D;--white:#FFFFFF;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--mist);line-height:1.6;font-size:16px;min-height:100vh;display:flex;flex-direction:column;}
+  h1,h2{font-family:'Space Grotesk',sans-serif;line-height:1.2;}
+  a{color:var(--bubble);}
+  header{background:var(--white);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1040px;margin:0 auto;}
+  .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;color:var(--ink);text-decoration:none;letter-spacing:-0.02em;}
+  .logo span{color:var(--bubble);}
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 24px;}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:40px;max-width:520px;width:100%;box-shadow:0 4px 24px rgba(15,28,36,0.07);}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--bubble);margin-bottom:12px;}
+  h1{font-size:28px;letter-spacing:-0.02em;margin-bottom:10px;}
+  .sub{color:var(--slate);font-size:15px;margin-bottom:28px;}
+  label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px;color:var(--ink);}
+  input[type=text],input[type=email],input[type=tel]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:18px;background:var(--white);color:var(--ink);}
+  input:focus{outline:2px solid var(--bubble);outline-offset:0;border-color:transparent;}
+  .consent-box{display:flex;gap:12px;align-items:flex-start;background:var(--bubble-soft);border:1px solid #C6E7D6;border-radius:8px;padding:14px;margin-bottom:20px;}
+  .consent-box input[type=checkbox]{margin-top:3px;width:18px;height:18px;flex-shrink:0;accent-color:var(--bubble);}
+  .consent-box label{font-weight:400;font-size:13px;color:var(--ink);line-height:1.6;margin:0;}
+  .btn{width:100%;background:var(--bubble);color:#fff;font-weight:600;font-size:15px;padding:14px;border-radius:8px;border:none;cursor:pointer;font-family:inherit;}
+  .btn:hover{background:#178055;}
+  .btn:focus-visible{outline:2px solid var(--bubble);outline-offset:2px;}
+  .fine{font-size:12px;color:var(--slate);line-height:1.65;margin-top:16px;text-align:center;}
+  footer{background:var(--ink);color:#B9C6CC;padding:28px 24px;font-size:13px;text-align:center;}
+  footer a{color:#fff;text-decoration:none;margin:0 12px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="/">Bookd<span>AI</span></a>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <p class="eyebrow">SMS Opt-In</p>
+    <h1>Stay in the loop</h1>
+    <p class="sub">Sign up to receive appointment scheduling, follow-up, and service update messages from BookdAI by text. You can opt out at any time.</p>
+
+    <!--
+      Replace the action URL below with your GHL form endpoint or webhook.
+    -->
+    <form action="#REPLACE-WITH-GHL-WEBHOOK-URL" method="POST">
+      <label for="fname">First name</label>
+      <input type="text" id="fname" name="first_name" autocomplete="given-name" required>
+
+      <label for="lname">Last name</label>
+      <input type="text" id="lname" name="last_name" autocomplete="family-name" required>
+
+      <label for="phone">Mobile number</label>
+      <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+1 (555) 000-0000" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" required>
+
+      <div class="consent-box">
+        <input type="checkbox" id="sms-consent" name="sms_consent" value="yes" required>
+        <label for="sms-consent">
+          By checking this box, I agree to receive recurring SMS text messages from BookdAI (Invictus Marketing Group LLC) at the mobile number above, including appointment scheduling, follow-up, and service update messages. Message frequency varies. Message and data rates may apply. Consent is not required as a condition of any purchase or service. Reply <strong>STOP</strong> to unsubscribe. Reply <strong>HELP</strong> for help. See our <a href="/privacy.html" target="_blank">Privacy Policy</a> and <a href="/terms.html" target="_blank">Terms of Service</a>.
+        </label>
+      </div>
+
+      <button class="btn" type="submit">Sign me up</button>
+    </form>
+
+    <p class="fine">
+      BookdAI is a service of Invictus Marketing Group LLC · St Johns, FL 32259<br>
+      <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms of Service</a><br>
+      Msg &amp; data rates may apply · Reply STOP to cancel · Reply HELP for help
+    </p>
+  </div>
+</main>
+
+<footer>
+  <a href="/">Home</a>
+  <a href="/privacy.html">Privacy Policy</a>
+  <a href="/terms.html">Terms of Service</a>
+  <p style="margin-top:12px;">© 2026 Invictus Marketing Group LLC, doing business as BookdAI. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
